@@ -7,3 +7,16 @@
         font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 }
+
+@layer components {
+    .custom-loader {
+        width:100px;
+        height:100px;
+        border-radius:50%;
+        border:16px solid;
+        border-color:#ffffff52;
+        border-right-color: #ffffffdb;
+        animation:s2 2s infinite linear;
+      }
+      @keyframes s2 {to{transform: rotate(1turn)}}
+}
