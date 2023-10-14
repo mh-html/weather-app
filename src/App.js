@@ -11,7 +11,6 @@ function App() {
 
   const returnBG = (state) =>{
     const base = " w-screen h-screen bg-center bg-cover"
-    console.log(!!state.errMessage);
     if(Object.keys(state).length && !state.errMessage){
       
       switch(state?.weather[0]?.main){
