@@ -18,12 +18,15 @@ function Cityname() {
   }
 
   const setCityHandler = async (e) =>{
-    if(e.key === "Enter"){
+    if(e.key === "Enter" && e.target.value !== ""){
       setLoading(true)
       await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=87574db0859ad52cef487ee72c854f16`)
       .then(res => setWeatherData(res.data))
       .catch(err => setWeatherData({errMessage: err.response.data.message}))
-      .finally(() => setLoading(false))
+      .finally(() => {
+        setLoading(false)
+        setCurrentCity("")
+      })
     }
   }
 
@@ -38,7 +41,7 @@ function Cityname() {
         {
           !!Object.keys(weatherData).length && !weatherData.errMessage &&
           <>
-            <h1 className='font-bold text-2xl capitalize'>{weatherData?.name}</h1>
+            <h1 className='font-bold text-2xl capitalize'>{weatherData?.name} / {weatherData?.sys?.country}</h1>
             <p className='text-gray-200'>{retDays(date.getDay())} , {retMonth(date.getMonth())} {date.getDate()}, {date.getFullYear()}</p>
             <p className='font-bold text-[70px]'>{retC(weatherData?.main?.temp)}°<span className='text-[50px]'>C</span></p>
             <p className='font-bold text-3xl'>----------------</p>
