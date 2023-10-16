@@ -12,6 +12,7 @@ module.exports = {
         'thunder' : "url('/src/assets/images/thunder.jpg')",
         'dust' : "url('/src/assets/images/dust.jpg')",
         'haze' : "url('/src/assets/images/haze.jpg')",
+        'dizzle' : "url('/src/assets/images/dizzle.jpg')",
       }
     },
   },
