@@ -22,7 +22,7 @@ function App() {
       Thunderstorm: "bg-thunder",
       Drizzle: "bg-dizzle",
       default: "bg-primary",
-    }[weatherData.weather ? weatherData?.weather[0]?.main : 'default'];
+    }[weatherData.main ? weatherData.weather[0].main : 'default'];
 
   return (
     <div className={`${weatherConditions}${baseClass}`}>
