@@ -45,7 +45,7 @@ function CityWeatherSearch() {
           onChange={handleSearchInputChange}
           className="mb-8 px-8 py-1 bg-transparent border-2 border-white rounded-md placeholder:text-white outline-none"
         />
-        <button type="submit" style={{ display: "none" }}></button>
+        <button type="submit" className="hidden"></button>
       </form>
       <p className="text-gray-200">
             {getDayOfWeek[currentDate.getDay()]}{" , "}
